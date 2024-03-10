@@ -17,6 +17,7 @@ modal.style.padding = "20px";
 modal.style.borderRadius = "5px";
 modal.style.border = "1px solid #888";
 
+
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "block";

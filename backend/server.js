@@ -52,7 +52,7 @@ app.put('/api/edittask/:id', (req, res) => {
 });
 
 // Route to delete a task
-app.delete('/api/tasks/:id', (req, res) => {
+app.delete('/api/deletetasks/:id', (req, res) => {
     const taskId = req.params.id;
     const taskIndex = tasks.findIndex(task => task.id === parseInt(taskId)); // Parse taskId to integer
 
