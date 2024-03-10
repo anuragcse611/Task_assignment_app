@@ -4,12 +4,54 @@ body {
     margin: 20px;
 }
 
-h1, h2 {
+.container{
+    position: relative;
+    box-sizing: border-box;
+}
+
+.task-main {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+
+
+.task-main .main-header {
     text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+ 
+nav input{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: rgb(9, 238, 9);
+
+}
+
+.filter-section {
+    width: calc(20% - 10px);
+    margin-right: 20px;
 }
 
 #taskList {
-    margin-bottom: 20px;
+    width: calc(80% - 20px);
+    overflow-y: auto; /* Add scrollbar if content overflows vertically */
+    max-height: 60vh; /* Set maximum height for the task list */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+    border-radius: 8px; /* Added border-radius for rounded corners */
+    background-color: #ffffff; /* Added background color */
 }
 
 .task {
@@ -17,6 +59,27 @@ h1, h2 {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.task_button {
+    text-align: center;
+}
+
+.task_button input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #007bff; 
+    color: #fff; 
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.task_button input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker shade on hover */
 }
 
 .task h3 {
@@ -34,3 +97,28 @@ h1, h2 {
 #excelUploadForm {
     text-align: center;
 }
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .filter-section {
+        width: 100%; /* Set filter section to full width */
+        margin-bottom: 20px; /* Add margin bottom to create space between filter section and task list */
+    }
+
+    #taskList {
+        width: 100%; /* Set task list to full width */
+    }
+}
+
+.modal-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: none;
+}
+
+
+
+/* modal.css */
+
