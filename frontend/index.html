@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link type="text/css" rel="stylesheet" href="modal.css">
     
+    
 </head>
 <body>
 <div class="container">
@@ -15,7 +16,7 @@
     <div class="task-main">
         <nav>
             <h1 class="main-header">Task Management App</h1>
-            <input type="submit" id="mybtn" name="add_task" value="Add Task">
+            <input type="submit" id="mybtn" name="add_task" value="Add Task" >
         </nav>
         
         <div class="filter-section">
@@ -51,14 +52,14 @@
         <div class="modal-content">
             <button type="button" id="close" class="close" onclick="closeModal()">close</button>
             <h2 id="modal-title" class="modal-title">Add Task</h2>
-            <form id="task-form" class="modal-form">
+            <form id="task-form" class="modal-form" name="addForm" action="" method="GET">
                 <div class="form-group">
                     <label for="title" class="modal-label">Title:</label>
-                    <input type="text" id="title" name="title" class="modal-input">
+                    <input type="text" id="title" name="title" value ="title" class="modal-input">
                 </div>
                 <div class="form-group">
                     <label for="description" class="modal-label">Description:</label>
-                    <textarea id="description" name="description" class="modal-textarea"></textarea>
+                    <textarea id="description" name="description" value="description" class="modal-textarea"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="status" class="modal-label">Status:</label>
@@ -68,12 +69,13 @@
                         <option value="completed">Completed</option>
                     </select>
                 </div>
-                <button type="button" id="save-task" onclick="saveTask()" class="modal-button">Save Task</button>
+                <button type="button" id="save-task" onclick="addTask(this.form)" class="modal-button">Save Task</button>
             </form>
         </div>
     </div>
 </div>
-    <script src="app.js"></script>
-    <script src="modal.js"></script> <!-- Corrected typo here -->
+    <script  src="app.js"></script>
+    <script  src="modal.js"></script> 
+    <script type="module" src="api.js"></script>
 </body>
 </html>
